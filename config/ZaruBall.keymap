@@ -1,12 +1,13 @@
 //#include <dt-bindings/zmk/mouse.h>
 
 #include <behaviors/rgbled_widget.dtsi>
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 800
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 120
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
@@ -30,15 +31,12 @@
     acceleration-exponent = <0>;
 };
 
-
-
 / {
     conditional_layers { compatible = "zmk,conditional-layers"; };
 };
 
 / {
     behaviors {
-        
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -52,11 +50,13 @@
             tapping-term-ms = <200>;
             bindings = <&mt RCTL LANG1>, <&mo 2>, <&mo 0>;
         };
+
         rot_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&kp>, <&kp>;
         };
+
         mouse_click: mouse_button_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
@@ -67,12 +67,15 @@
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&mmv>, <&mmv>;
+
             tap-ms = <10>;
         };
+
         mouse_scrl: mouse_wheel_scrl {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
             bindings = <&msc>, <&msc>;
+
             tap-ms = <10>;
         };
     };
@@ -143,7 +146,10 @@
 
         base_layer {
             display-name = "Base";
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&mouse_scrl SCRL_UP SCRL_DOWN>;
+            sensor-bindings =
+                <&mouse_scrl SCRL_DOWN SCRL_UP>,
+                <&mouse_scrl SCRL_UP SCRL_DOWN>;
+
             bindings = <
 &kp ESC       &kp N1  &kp N2  &kp N3        &kp N4    &kp N5                        &kp NUMBER_6         &kp N7     &kp N8  &kp N9     &kp N0   &kp EQUAL
 &kp TAB       &kp Q   &kp W   &kp E         &kp R     &kp T                         &kp Y                &kp U      &kp I   &kp O      &kp P    &kp MINUS
@@ -179,7 +185,7 @@
 
         adjust_layer {
             display-name = "Adjust";
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>;
             bindings = <
 &none  &kp KP_NUMLOCK  &kp KP_N1  &kp KP_N2  &kp KP_N3     &kp KP_MINUS         &none  &none           &none  &none  &none  &none
 &none  &kp ASTERISK    &kp KP_N4  &kp KP_N5  &kp KP_N6     &kp KP_PLUS          &none  &none           &none  &none  &none  &none
