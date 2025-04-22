@@ -126,10 +126,10 @@
         };
 
         mail_yoshi: mail {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp Y &kp O &kp S &kp H &kp I &kp T &kp A &kp K &kp A &kp T &kp A &kp K &kp A &kp N0 &kp N9 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
-            label = "MAIL";
+    compatible = "zmk,behavior-macro";
+    label = "MAIL";
+    #binding-cells = <0>;
+    bindings = <&text "yoshitakatakan09@gmail.com">;
         };
 
         mail_ag21: mail_ag21 {
