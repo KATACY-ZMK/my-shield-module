@@ -168,7 +168,7 @@
 
         lower_layer {
             display-name = "Lower";
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>;
             bindings = <
 &trans  &none           &none  &none         &none             &none                                  &none          &none         &none         &none           &none      &none
 &trans  &none           &none  &kp CAPSLOCK  &mkp MB3          &kp PRINTSCREEN                        &none          &none         &kp UP_ARROW  &none           &none      &none
@@ -230,7 +230,7 @@
         };
 
         layer_6 {
-             display-name = "JapaneseBase";
+            display-name = "JapaneseBase";
             sensor-bindings =
                 <&mouse_scrl SCRL_DOWN SCRL_UP>,
                 <&mouse_scrl SCRL_UP SCRL_DOWN>;
