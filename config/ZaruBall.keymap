@@ -123,27 +123,6 @@
                 <&macro_release>,
                 <&mo 1>;
         };
-
-        mail_yoshi: mail {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp Y &kp O &kp S &kp H &kp I &kp T &kp A &kp K &kp A &kp T &kp A &kp K &kp A &kp N0 &kp N9 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
-            label = "MAIL";
-        };
-
-        mail_ag21: mail_ag21 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp A &kp G &kp N2 &kp N1 &kp N0 &kp N8 &kp N3 &kp AT &kp S &kp I &kp C &kp DOT &kp S &kp H &kp I &kp B &kp A &kp U &kp R &kp A &kp MINUS &kp I &kp T &kp DOT &kp A &kp C &kp DOT &kp J &kp P>;
-            label = "MAIL_AG21";
-        };
-
-        ems: ems {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp E &kp M &kp S &kp N2 &kp N3 &kp N7 &kp UNDER &kp EXCL>;
-            label = "EMS";
-        };
     };
 };
 
