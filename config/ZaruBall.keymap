@@ -38,10 +38,6 @@
 };
 
 / {
-    conditional_layers { compatible = "zmk,conditional-layers"; };
-};
-
-/ {
     input_processors {
         zip_wheel_scaler: zip_wheel_scaler {
             compatible = "zmk,input-processor-scaler";
