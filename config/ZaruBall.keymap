@@ -179,9 +179,7 @@
         double00: double00 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp N0 &kp N0 &kp A &kp A &kp LS(T) &kp Y &kp P &kp E &kp SPACE &kp S &kp O &kp M &kp E &kp T &kp H &kp I &kp N &kp G &kp DOT &kp DOT &kp DOT>;
+            bindings = <&macro_tap>, <&kp N0 &kp N0>;
 
             label = "DOUBLE00";
             wait-ms = <0>;
