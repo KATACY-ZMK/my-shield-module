@@ -11,11 +11,10 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
-#define LOWER 1
-#define RAISE 2
-#define ADJUST 3
-#define MOUSE 4
-#define SCROLL 1
+#define SNIPE 4
+#define SCROLL 5
+#define SCROLL_WARP 6
+#define SCROLL_SNIPE 7
 
 &mmv {
     delay-ms = <0>;
@@ -31,8 +30,60 @@
     acceleration-exponent = <0>;
 };
 
+&mmv_input_listener {
+    precision {
+        layers = <SNIPE>;
+        input-processors = <&zip_xy_scaler 1 4>;
+    };
+};
+
 / {
     conditional_layers { compatible = "zmk,conditional-layers"; };
+};
+
+/ {
+    input_processors {
+        zip_wheel_scaler: zip_wheel_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL>;
+            track-remainders;
+        };
+        zip_hwheel_scaler: zip_hwheel_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
+};
+
+&msc_input_listener {
+    warp {
+        layers = <SCROLL_WARP>;
+        input-processors = <&zip_wheel_scaler 4 1>, <&zip_hwheel_scaler 4 1>;
+    };
+    precision {
+        layers = <SCROLL_SNIPE>;
+        input-processors = <&zip_wheel_scaler 1 4>, <&zip_hwheel_scaler 1 4>;
+    };
+};
+
+&trackball_listener {
+    scroller {
+        layers = <SCROLL>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+    scroller_warp {
+        layers = <SCROLL_WARP>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_wheel_scaler 4 1>, <&zip_hwheel_scaler 4 1>;
+    };
+    scroller_precision {
+        layers = <SCROLL_SNIPE>;
+        input-processors = <&zip_xy_to_scroll_mapper>, <&zip_wheel_scaler 1 4>, <&zip_hwheel_scaler 1 4>;
+    };
 };
 
 / {
@@ -116,12 +167,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&to 1>,
+                <&to 4>,
                 <&macro_press>,
-                <&mo 1>,
+                <&mo 4>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 1>;
+                <&mo 4>;
         };
 
         double00: double00 {
@@ -167,7 +218,7 @@
             >;
         };
 
-        lower_layer {
+        layer_1 {
             display-name = "Lower";
             sensor-bindings = <&inc_dec_kp LC(PAGE_DOWN) LC(PAGE_UP)>;
             bindings = <
@@ -179,7 +230,7 @@
             >;
         };
 
-        raise_layer {
+        layer_2 {
             display-name = "Raise";
             sensor-bindings = <&inc_dec_kp LG(LS(RIGHT)) LG(LS(LEFT))>;
             bindings = <
@@ -191,7 +242,7 @@
             >;
         };
 
-        adjust_layer {
+        layer_3 {
             display-name = "Adjust";
             sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
             bindings = <
@@ -205,7 +256,7 @@
 
         // Extra layer can be added in ZMK STUDIO
 
-        layer_4 {
+        SNPIE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
@@ -215,7 +266,7 @@
             >;
         };
 
-        layer_8 {
+        SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
@@ -225,7 +276,7 @@
             >;
         };
 
-        layer_9 {
+        SCROLL_WARP {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
@@ -235,7 +286,7 @@
             >;
         };
 
-        layer_7 {
+        SCROLL_SNIPE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
