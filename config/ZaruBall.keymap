@@ -215,51 +215,6 @@
             >;
         };
 
-        layer_5 {
-            display-name = "JapaneseBaseShift";
-            sensor-bindings =
-                <&mouse_scrl SCRL_DOWN SCRL_UP>,
-                <&mouse_scrl SCRL_UP SCRL_DOWN>;
-
-            bindings = <
-&kp ESC       &kp LS(N1)  &kp LEFT_BRACKET  &kp LS(N3)    &kp LS(N4)  &kp LS(N5)                          &kp EQUAL                  &kp LS(NUMBER_6)  &kp LS(SQT)  &kp LS(N8)     &kp LS(N0)   &kp LS(EQUAL)
-&kp TAB       &kp LS(Q)   &kp LS(W)         &kp LS(E)     &kp LS(R)   &kp LS(T)                           &kp LS(Y)                  &kp LS(U)         &kp LS(I)    &kp LS(O)      &kp LS(P)    &kp LS(INT_RO)
-&kp LEFT_WIN  &kp LS(A)   &kp LS(S)         &kp LS(D)     &kp LS(F)   &kp LS(G)   &lt 3 LS(N7)            &lt 2 LS(INTERNATIONAL_3)  &kp LS(H)         &kp LS(J)    &kp LS(K)      &kp LS(L)    &kp SQT         &kp ENTER
-&kp LSHFT     &kp LS(Z)   &kp LS(X)         &kp LS(C)     &kp LS(V)   &kp LS(B)   &lt 2 LS(LEFT_BRACKET)  &lt 3 LS(BACKSLASH)        &kp LS(N)         &kp LS(M)    &kp LS(COMMA)  &kp LS(DOT)  &kp LS(FSLH)    &lt 1 LS(INTERNATIONAL_3)
-&kp RCTRL                 &mo 1             &kp LEFT_ALT  &mkp MB1    &mkp MB2    &mo 6                   &kp BACKSPACE              &kp SPACE                                                  &lt 2 LS(N7)
-            >;
-        };
-
-        layer_6 {
-            display-name = "JapaneseBase";
-            sensor-bindings =
-                <&mouse_scrl SCRL_DOWN SCRL_UP>,
-                <&mouse_scrl SCRL_UP SCRL_DOWN>;
-
-            bindings = <
-&kp ESC       &kp N1  &kp N2  &kp N3        &kp N4    &kp N5                         &kp NUMBER_6            &kp N7     &kp N8  &kp N9     &kp N0   &kp LS(EQUAL)
-&kp TAB       &kp Q   &kp W   &kp E         &kp R     &kp T                          &kp Y                   &kp U      &kp I   &kp O      &kp P    &kp MINUS
-&kp LEFT_WIN  &kp A   &kp S   &kp D         &kp F     &kp G     &lt 3 LS(NUMBER_2)   &lt 2 INTERNATIONAL_3   &kp H      &kp J   &kp K      &kp L    &kp SEMI            &kp ENTER
-&mo 5         &kp Z   &kp X   &kp C         &kp V     &kp B     &lt 2 RIGHT_BRACKET  &lt 3 NON_US_BACKSLASH  &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH            &lt 1 LS(INTERNATIONAL_3)
-&kp RCTRL             &mo 1   &kp LEFT_ALT  &mkp MB1  &mkp MB2  &mo 1                &kp BACKSPACE           &kp SPACE                              &lt 2 LS(NUMBER_2)
-            >;
-        };
-
-        layer_7 {
-            display-name = "Base";
-            sensor-bindings =
-                <&mouse_scrl SCRL_DOWN SCRL_UP>,
-                <&mouse_scrl SCRL_UP SCRL_DOWN>;
-
-            bindings = <
-&kp ESC       &kp N1  &kp N2  &kp N3     &kp N4     &kp N5                         &kp NUMBER_6         &kp N7     &kp N8  &kp N9     &kp N0   &kp EQUAL
-&kp TAB       &kp Q   &kp W   &kp E      &kp R      &kp T                          &kp Y                &kp U      &kp I   &kp O      &kp P    &kp MINUS
-&kp LEFT_WIN  &kp A   &kp S   &kp D      &kp F      &kp G      &lt 3 SQT           &lt 2 BACKSLASH      &kp H      &kp J   &kp K      &kp L    &kp SEMI   &kp ENTER
-&kp LSHFT     &kp Z   &kp X   &kp C      &kp V      &kp B      &lt 2 LEFT_BRACKET  &lt 3 RIGHT_BRACKET  &kp N      &kp M   &kp COMMA  &kp DOT  &kp FSLH   &lt 1 BACKSLASH
-&kp RCTRL             &mo 1   &kp SPACE  &kp SPACE  &kp SPACE  &mo 1               &kp BACKSPACE        &kp SPACE                              &lt 2 SQT
-            >;
-        };
-
         layer_8 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
@@ -271,6 +226,16 @@
         };
 
         layer_9 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans                          &trans
+            >;
+        };
+
+        layer_7 {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
