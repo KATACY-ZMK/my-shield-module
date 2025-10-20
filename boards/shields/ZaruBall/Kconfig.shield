@@ -1,5 +1,5 @@
 #No whitespace after the comma or in your part name!
-config SHIELD_ZRUBALL_FOOT
+config SHIELD_ZARUBALL_FOOT
     def_bool $(shields_list_contains,ZaruBall_foot)
 
 config SHIELD_ZARUBALL_LEFT
