@@ -1,31 +1,33 @@
-if SHIELD_ZARUBALL_RIGHT #ここを変えてセントラル側に問題のコードを移行
+if SHIELD_ZARUBALL_FOOT
 
-# Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "ZaruBall"
+    default "ZaruBall_foot"
+
+config ZMK_SPLIT
+    default y
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_ZARUBALL_LEFT || SHIELD_ZARUBALL_RIGHT
+if SHIELD_ZARUBALL_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "ZaruBall_left"
 
 config ZMK_SPLIT
     default y
 
 endif
 
-# Input Device(pmw3610)のためのコンフィグ
 if SHIELD_ZARUBALL_RIGHT
 
-# Other settings
+config ZMK_KEYBOARD_NAME
+    default "ZaruBall_right"
 
-config ZMK_POINTING
-    default y
-
-# Assuming pointing device uses SPI
-config SPI
+config ZMK_SPLIT
     default y
 
 endif
+

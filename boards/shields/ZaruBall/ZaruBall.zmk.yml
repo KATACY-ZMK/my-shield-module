@@ -12,5 +12,6 @@ features: # keys,display, encoder, underglow, backlight, studio(ready to use ZMK
   - pointer
   - studio
 siblings:
+  - Zaruball_foot
   - ZaruBall_left
   - ZaruBall_right
