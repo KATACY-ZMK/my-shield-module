@@ -134,7 +134,7 @@
     };
 };
 
-// ZaruBall.dtsi にこの内容を追加
+
 
 //pmw3610 listener
 / {
@@ -144,17 +144,3 @@
      };
 };
 
-// ↓↓↓ これを追加 ↓↓↓
-// キーマップが参照するための、空のセンサー定義
-/ {
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-    };
-};
-//pmw3610 listener
-/ {
-   trackball_listener: trackball_listener {
-         compatible = "zmk,input-listener";
-         status = "disabled";
-     };
-};
