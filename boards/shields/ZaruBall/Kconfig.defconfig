@@ -1,7 +1,7 @@
-if SHIELD_ZARUBALL_RIGHT
+if SHIELD_ZARUBALL_FOOT
 
 config ZMK_KEYBOARD_NAME
-    default "ZaruBall_right"
+    default "ZaruBall_foot"
 
 config ZMK_SPLIT
     default y
@@ -21,10 +21,10 @@ config ZMK_SPLIT
 
 endif
 
-if SHIELD_ZARUBALL_FOOT
+if SHIELD_ZARUBALL_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "ZaruBall_foot"
+    default "ZaruBall_right"
 
 config ZMK_SPLIT
     default y
