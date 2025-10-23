@@ -6,8 +6,8 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT
     default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+# config ZMK_SPLIT_ROLE_CENTRAL  <-- 削除
+#    default y                 <-- 削除
 
 endif
 
@@ -29,5 +29,7 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT
     default y
 
-endif
+config ZMK_SPLIT_ROLE_CENTRAL  # <-- これを追加
+    default y                # <-- これを追加
 
+endif
