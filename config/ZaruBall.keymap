@@ -264,7 +264,7 @@
 
         // Extra layer can be added in ZMK STUDIO
 
-        SNPIE {
+        SNIPE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
