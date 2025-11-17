@@ -77,11 +77,6 @@
                             >;
     };
 
-    scroller {
-        layers = <SCROLL>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
-    };
-
     scroller_warp {
         layers = <SCROLL_WARP>;
         input-processors =
