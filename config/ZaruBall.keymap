@@ -2,15 +2,14 @@
 
 #include <behaviors/rgbled_widget.dtsi>
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 120
-
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/input_transform.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
 #define SNIPE 4
@@ -65,6 +64,19 @@
 };
 
 &trackball_listener {
+    input-processors =  <
+                         &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT | INPUT_TRANSFORM_X_INVERT)
+                         &zip_temp_layer MOUSE 500
+                        >;
+    scroller {
+        layers = <SCROLL>;
+        input-processors = <
+                            &zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)
+                            &zip_xy_scaler 1 20
+                            &zip_xy_to_scroll_mapper
+                            >;
+    };
+
     scroller {
         layers = <SCROLL>;
         input-processors = <&zip_xy_to_scroll_mapper>;
@@ -86,6 +98,8 @@
             <&zip_hwheel_scaler 1 4>;
     };
 };
+
+
 
 / {
     behaviors {
